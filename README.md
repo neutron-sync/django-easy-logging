@@ -24,9 +24,46 @@ In your other files, use Loguru methods for logging.
 from loguru import logger
 
 logger.debug("That's it, beautiful and simple logging!")
+
+logger.info("If you're using Python {}, prefer {feature} of course!", 3.6, feature="f-strings")
 ```
 
 **Note:** Any existing logging is funneled into loguru when using the defualt settings. Loguru is used as a sink as [outlined in the docs](https://github.com/Delgan/loguru#entirely-compatible-with-standard-logging).
+
+## Customization
+
+### Log Level
+
+The default log level in DEBUG is `INFO`. Otherwise the default level is `ERROR`.
+
+You can override the log level with the env `LOGLEVEL`.
+
+or
+
+pass in a log level into `load_loguru`.
+
+**Example:** `load_loguru(globals(), loglevel="WARNING")`
+
+
+### Logging Config
+
+The `LOGGING` config dict is generated automatically or you can pass in your own. The default is created by [generate_loggin_config](https://github.com/neutron-sync/django-easy-logging/blob/main/dj_easy_log.py#L9-L33)
+
+**Example:** `load_loguru(globals(), logging_config=MY_LOGGING_CONFIG)`
+
+### Configuring Loguru
+
+You can pass in a function that configure Loguru.
+
+**Example:**
+
+```python
+def setup_loguru(logger, settings_dict):
+  if not settings_dict['DEBUG']:
+    logger.add("django.log", rotation="100 MB")
+
+load_loguru(globals(), configure_func=setup_loguru)
+```
 
 ## Shameless Plugs
 
