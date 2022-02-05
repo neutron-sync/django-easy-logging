@@ -53,7 +53,7 @@ The `LOGGING` config dict is generated automatically or you can pass in your own
 
 ### Configuring Loguru
 
-You can pass in a function that configure Loguru.
+You can pass in a function that configures Loguru.
 
 **Example:**
 
