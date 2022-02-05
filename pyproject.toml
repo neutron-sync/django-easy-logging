@@ -1,0 +1,35 @@
+[project]
+name = "django-easy-logging"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Paul Bailey", email = "paul@neutron.studio"},
+]
+dependencies = [
+    "pytest>=7.0.0",
+    "loguru>=0.6.0",
+]
+requires-python = ">=3.7"
+license = {text = "MIT"}
+
+[project.urls]
+homepage = ""
+
+[project.optional-dependencies]
+[tool]
+[tool.pdm]
+[tool.pdm.dev-dependencies]
+dev = [
+    "toml>=0.10.2",
+]
+
+[build-system]
+requires = ["pdm-pep517"]
+build-backend = "pdm.pep517.api"
+
+[tool.pdm.scripts]
+_.env_file = ".env"
+publish = "pdm publish --username __token__ --password $PDM_PUBLISH_PASSWORD"
+format = "yapf -rpi -vv ."
+check_format = "yapf -rpd ."
+test = "pytest test_easy_log.py"
