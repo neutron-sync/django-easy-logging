@@ -65,6 +65,12 @@ def setup_loguru(logger, settings_dict):
 load_loguru(globals(), configure_func=setup_loguru)
 ```
 
+### Configuring the Default Format
+
+export LOGURU_FORMAT="<blue>{time:HH:mm:ss}</blue> | <red>{name}:{line}</red> | {level} - {message}"
+
+See the [record dict documention](https://loguru.readthedocs.io/en/stable/api/logger.html#record) for other available formatting options. And see [color markups](https://loguru.readthedocs.io/en/stable/api/logger.html#color) for more info on coloring and markups.
+
 ## Shameless Plugs
 
 I built this library originally for the [NeutronSync Service](https://www.neutronsync.com/). So if you would like to support this project please support the service with a subscription to NeutronSync or a [donation](https://github.com/sponsors/neutron-sync) to the open source libraries.
