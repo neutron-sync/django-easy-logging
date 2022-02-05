@@ -66,7 +66,7 @@ def load_loguru(settings, configure_func=None, logging_config=None, loglevel=Non
 
   if not LOGGING_LOADED or force_reload:
     if configure_func is not None:
-      configure_func(logger)
+      configure_func(logger, settings)
 
     logging.basicConfig(handlers=[InterceptHandler()], level=0)
     LOGGING_LOADED = True

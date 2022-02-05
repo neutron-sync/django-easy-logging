@@ -18,7 +18,7 @@ def test_configure(load_loguru):
   if log_path.exists():
     log_path.unlink()
 
-  def setup(logger):
+  def setup(logger, settings):
     logger.add(log_path)
 
   ret = load_loguru({'DEBUG': True}, configure_func=setup)
