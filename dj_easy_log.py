@@ -68,7 +68,7 @@ def load_loguru(settings, configure_func=None, logging_config=None, loglevel=Non
     if configure_func is not None:
       configure_func(logger, settings)
 
-    logging.basicConfig(handlers=[InterceptHandler()], level=0)
+    logging.basicConfig(handlers=[InterceptHandler()], level=getattr(logging, loglevel))
     LOGGING_LOADED = True
 
   ret = {'LOGGING': logging_config, 'LOGLEVEL': loglevel, 'LOGGER': logger}
