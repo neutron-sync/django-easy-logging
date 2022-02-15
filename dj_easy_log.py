@@ -9,7 +9,7 @@ LOGGING_LOADED = False
 def generate_logging_config(loglevel):
   return {
     'version': 1,
-    'disable_existing_loggers': False,
+    'disable_existing_loggers': True,
     'formatters': {
       'simple': {
         'format': '{message}',
