@@ -6,7 +6,7 @@ Easy Django logging with Loguru
 
 ## Install
 
-`pip install djang-easy-logging`
+`pip install django-easy-logging`
 
 ## Usage
 
