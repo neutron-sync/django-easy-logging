@@ -47,7 +47,7 @@ pass in a log level into `load_loguru`.
 
 ### Logging Config
 
-The `LOGGING` config dict is generated automatically or you can pass in your own. The default is created by [generate_loggin_config](https://github.com/neutron-sync/django-easy-logging/blob/main/dj_easy_log.py#L9-L33)
+The `LOGGING` config dict is generated automatically or you can pass in your own. The default is created by [generate_logging_config](https://github.com/neutron-sync/django-easy-logging/blob/main/dj_easy_log.py#L9-L33)
 
 **Example:** `load_loguru(globals(), logging_config=MY_LOGGING_CONFIG)`
 
