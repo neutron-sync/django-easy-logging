@@ -1,6 +1,6 @@
 [project]
 name = "django-easy-logging"
-version = "0.4.0"
+version = "0.50"
 description = "Easy Django logging with Loguru"
 authors = [
     {name = "Paul Bailey", email = "paul@neutron.studio"},
