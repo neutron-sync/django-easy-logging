@@ -35,3 +35,12 @@ def test_custom_config(load_loguru):
 def test_level(load_loguru):
   ret = load_loguru({'DEBUG': False}, loglevel="WARNING")
   assert ret['LOGLEVEL'] == 'WARNING'
+
+
+def test_double_load(load_loguru):
+  try:
+    ret = load_loguru({'DEBUG': False})
+    ret = load_loguru({'DEBUG': False})
+
+  except Exception as exc:
+    assert False, f"Raised an exception {exc}"
